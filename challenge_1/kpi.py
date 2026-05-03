@@ -24,10 +24,12 @@
 #
 # Save it in Git and on GitHub.
 
+BONUS = 1000
+
 name = input("Please enter your name: ")
 salary = float(input("Please enter your salary: "))
 bonus = float(input("Please enter the percentage of your bonus: "))
 
-bonus_amount = 1000 + salary * bonus
+bonus_amount = BONUS + salary * bonus
 
 print(f"Hello {name}, your bonus amount was {bonus_amount}")
