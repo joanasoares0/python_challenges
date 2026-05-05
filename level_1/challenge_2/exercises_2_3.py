@@ -11,7 +11,7 @@
 # print(f"Hello {name}, your bonus amount was {bonus_amount}")
 
 
-BONUS = 1000
+CONSTANT = 1000
 
 try:
     name = input("Please enter your name: ")
@@ -20,6 +20,8 @@ try:
         raise ValueError("Name cannot be empty.")
     elif any(i.isdigit() for i in name): # Check if the name contains only letters
         raise ValueError("Name must contain only letters.")
+    elif name.isspace(): # Check if the name contains only whitespace
+        raise ValueError("Name cannot contain only whitespace.")
     else:
         print("Valid name entered.")
 
@@ -33,5 +35,5 @@ except ValueError as e:
     print(f"{e}. Invalid input. Please enter valid values.")
 
 else:
-    bonus_amount = BONUS + salary * bonus
+    bonus_amount = CONSTANT + salary * bonus
     print(f"Hello {name}, your bonus amount was {bonus_amount}")
