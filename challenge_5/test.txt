@@ -1,0 +1,5 @@
+category,product,quantity,sales
+A,AA,10,500
+B,BB,2,85
+C,CC,5,1200
+A,AB,34,34444
