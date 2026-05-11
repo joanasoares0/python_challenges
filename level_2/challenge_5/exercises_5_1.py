@@ -1,8 +1,10 @@
 # Tasks:
 # Read the CSV file and load the data.
+
 # Process the data into a dictionary where the key is the category
 # and the value is a list of dictionaries, each containing product information
 # (Product, Quantity, Sale).
+
 # Calculate the total sales (Quantity * Sale) per category.
 #
 # Functions
