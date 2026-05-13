@@ -1,7 +1,7 @@
+from level_2.challenge_5.logging_utils import log_decorator
 import pandas as pd
 import os
 import glob
-
 
 # To perform a simple ETL (Extract, Transform, Load) using Python and the Pandas library,
 # we will follow these steps:
@@ -19,6 +19,7 @@ import glob
 
 
 # Extract function
+@log_decorator
 def extract_data(folder: str) -> pd.DataFrame:
     # List all json files in folder
     json_files = glob.glob(os.path.join(folder, "*.json"))
@@ -36,6 +37,7 @@ def extract_data(folder: str) -> pd.DataFrame:
 
 
 # Transform function
+@log_decorator
 def transform_data(df: pd.DataFrame) -> pd.DataFrame:
     df["Total"] = df["Quantidade"] * df["Venda"]
     print(df.head())
@@ -43,6 +45,7 @@ def transform_data(df: pd.DataFrame) -> pd.DataFrame:
 
 
 # Load function
+@log_decorator
 def load_data(df: pd.DataFrame, output_file: str, format: str = "csv") -> None:
     if format == "csv":
         df.to_csv(output_file, index=False)
@@ -53,6 +56,7 @@ def load_data(df: pd.DataFrame, output_file: str, format: str = "csv") -> None:
     print(f"Data loaded to {output_file}")
 
 
+@log_decorator
 def pipeline(folder, output_file, format):
     data = extract_data(folder)
     transformed_data = transform_data(data)
